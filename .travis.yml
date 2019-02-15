@@ -1,0 +1,7 @@
+before_script:
+  - wget http://lilypond.org/download/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
+  - sudo sh lilypond-2.18.2-1.linux-64.sh --batch
+
+script:
+  - mkdir -p out
+  - lilypond -o out src/test.ly
