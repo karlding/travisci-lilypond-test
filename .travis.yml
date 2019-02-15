@@ -5,3 +5,14 @@ before_script:
 script:
   - mkdir -p out
   - lilypond -o out src/test.ly
+
+deploy:
+  provider: releases
+  file:
+    - out/test.pdf
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: karlding/travisci-lilypond-test
+  api_key:
+    secure: CPa/hL3b8QX1XLucnDXOBC76EIq1UH4G/V8Yk6fBIZD8glszE2XxxPzm2v/eY8wiSJ3ZDmcQMYP67n39IeFcQixA/ofMDnJTtNNLAWfiHvFGf+2RcXrwEMNu/jyvtHRUoIcoS5B2EK+/tseqqJygIsd+9q9zG8Ln/oN77Ple+358G+34PKG+qhU/1zgvv4dzEzVY04HsRgqAN1qoK+sspFVVCS67LGgcD8Q/v3ihHejv2nLb0Z2BbbxShqyZ479sqt6KT0pT8aPUy6KN6O5g7kB0tZ3n8+LmKEX96FQ5J1BebDF/j4vRKTb4XAhFKoNjUW8Z0dipKEcQl9oTl7d7hQlZ8T4oyHD7OFczACMYEOm97URnOlHFUQMbEi2WP8SlRwIepPXxrT8jhS0Zkgm42+zGiO/wHk1qzOgfRgVpCjXAAd/KFZ7SoIPxvdWkRngXONhIHnSv6k9ijxVyibgQdlj3Ey4R8R6YfN0LaWXTO2u/rbya73zY/zrO4Crw81xoxcsG+9n3yG8mLL6t3VCsM8k5tg+f7GhKYpLgEFXgqliCDDU+3EorBOrLF5s3+1sl2gDcSe3UnPfPvl+tAIX+lFBEaA0ro4FmypDdSpBkHPdMsujCz6xP6Jm6NoUf0x6JsBsDroOLknYx5dpoeHyV1VF7A9bbdBpdbSCFIQ3gnbs=
